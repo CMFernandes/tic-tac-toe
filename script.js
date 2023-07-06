@@ -6,3 +6,7 @@ const gameBoard = (() => {
     }
 })()
 
+function player(name,mark){
+    return {name, mark}
+}
+
