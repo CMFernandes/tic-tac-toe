@@ -45,6 +45,7 @@ const game = (() => {
 
     function cellEvent(e) {
         if(!gameOver){
+            if(e.currentTarget.textContent === ""){
             e.currentTarget.textContent = players[currentPlayerIndex].mark;
             gameBoard.getBoard[e.currentTarget.dataset.id] = players[currentPlayerIndex].mark
                     
@@ -60,11 +61,12 @@ const game = (() => {
                 tieMsg.textContent = `It's a Tie!`
             }
             
-        }else {
+            }else {
             endGame
+            }
+        }else{
+            return
         }
-
-
     }
 
     const handleClick = () => {
