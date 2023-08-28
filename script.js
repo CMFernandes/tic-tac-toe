@@ -40,6 +40,7 @@ const game = (() => {
     }
 
     let winnerMsg = document.querySelector(".winnerMsg")
+    let winnerPara = document.querySelector(".winnerPara")
     let tieMsg = document.querySelector(".tieMsg")
     let counterMove = 0
 
@@ -51,16 +52,18 @@ const game = (() => {
                     
             if(checkWinner(gameBoard.getBoard)){
                 gameOver = true;
-                winnerMsg.textContent = `${players[currentPlayerIndex].name} has Won!`
+                winnerMsg.style.display = "flex";
+                winnerPara.textContent  = `${players[currentPlayerIndex].name} has Won!`
             }
             playerTurn()
             counterMove++
 
-            if(counterMove === gameBoard.getBoard.length){
+            if(gameOver === true){
+                return
+            }else if(counterMove === gameBoard.getBoard.length){
                 gameOver = true;
-                tieMsg.textContent = `It's a Tie!`
+                tieMsg.style.display = "flex" 
             }
-            
             }else {
             endGame
             }
@@ -68,6 +71,14 @@ const game = (() => {
             return
         }
     }
+    let closeBtn = document.querySelectorAll(".closeBtn")
+
+    closeBtn.forEach((btn) => {
+        btn.addEventListener('click', () => {
+        winnerMsg.style.display = "none";
+        tieMsg.style.display = "none";
+        game.restartGame(gameBoard.getBoard)
+    })});
 
     const handleClick = () => {
 
@@ -117,8 +128,7 @@ const game = (() => {
         document.querySelector("#player1").value = "";
         document.querySelector("#player2").value = "";
 
-        winnerMsg.textContent = "";
-        tieMsg.textContent = ""
+        winnerPara.textContent = "";
         counterMove = 0
     }
     restartBtn.addEventListener('click',() =>{
