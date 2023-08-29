@@ -40,7 +40,7 @@ const game = (() => {
     }
 
     let winnerMsg = document.querySelector(".winnerMsg")
-    let winnerPara = document.querySelector(".winnerPara")
+    let winnerPara = document.querySelector(".winner.para")
     let tieMsg = document.querySelector(".tieMsg")
     let counterMove = 0
 

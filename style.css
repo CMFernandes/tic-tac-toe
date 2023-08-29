@@ -31,6 +31,7 @@ h1{
 }
 .game-container{
    width: 70%;
+   margin-left: 50px;
 }
 
 .board{
@@ -73,8 +74,7 @@ button{
   text-align: center;
 }
 
-button:hover,
-button:focus {
+button:hover {
   background-color: rgb(63, 161, 161);
 }
 
@@ -89,6 +89,32 @@ button:focus {
     background-color: rgba(158, 158, 158, 0.7);
     justify-content: center;
     align-items: center;
+
+}
+
+.para{
+    background-color: white;
+    padding: 40px 60px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    font-size: 2.5em;
+    color: rgb(22, 138, 138);
+}
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding-bottom: 40px;
+    background-color: transparent;
+    color: red;
+    border: none;
+    font-size: 2em;
+}
+
+.closeBtn:hover{
+    background-color:rgba(219, 174, 174, 0.7);
 }
 
 
